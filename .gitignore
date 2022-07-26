@@ -15,6 +15,9 @@ coverage
 *.local
 .cache
 .bash_history
+.config
+.htaccess
+.npm
 
 /cypress/videos/
 /cypress/screenshots/
