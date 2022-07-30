@@ -1,6 +1,6 @@
 <template>
     <div class="p-3 product-card border rounded shadow mb-4">
-        <div class="product-card__title mb-2 fw-bold font-big">Сварочный аппарат-инвертор Ресанта MIG/MAG R29000 I</div>
+        <div class="product-card__title mb-2 fw-bold font-big">{{ this.product.name }}</div>
         <div class="row d-flex justify-content-between">
             <div class="col-4">
                 <img
@@ -35,7 +35,7 @@
                 </ul>
             </div>
             <div class="col-4 text-end">
-                <div class="product-card__price fw-bold font-medium">ЦЕНА ОТ 3699 рублей</div>
+                <div class="product-card__price fw-bold font-medium" v-if="this.product.price_from">ЦЕНА ОТ {{ this.product.price_from }} рублей</div>
             </div>
         </div>
     </div>
@@ -43,7 +43,9 @@
 
 <script>
 export default {
-    name: "ProductCard"
+    props: {
+        product: Object
+    },
 }
 </script>
 

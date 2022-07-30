@@ -4,7 +4,7 @@
         <CategoriesSlider/>
         <div class="row">
             <div class="col-9">
-                <ProductCard v-for="item in 3"/>
+                <Products/>
             </div>
             <div class="col-3">
                 <Aside/>
@@ -14,8 +14,8 @@
 </template>
 
 <script setup>
-import ProductCard from "../components/ProductCard.vue";
 import CategoriesSlider from "../components/CategoriesSlider.vue";
+import Products from "../components/Products.vue";
 </script>
 
 <style lang="scss" scoped>
