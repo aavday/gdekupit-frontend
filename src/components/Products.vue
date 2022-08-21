@@ -20,7 +20,7 @@ export default {
     },
     async mounted() {
         try {
-            this.products = (await axios.get('http://backend.aavday.beget.tech/api/products')).data.data;
+            this.products = (await axios.get('http://127.0.0.1:8000/api/products')).data.data;
         } catch (error) {
             console.log(error);
         }
