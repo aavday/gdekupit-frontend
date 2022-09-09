@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ProductCard v-for="product in products" :product="product"/>
+        <ProductCard v-if="!loading" v-for="product in products" :product="product"/>
     </div>
 </template>
 
@@ -24,6 +24,8 @@ export default {
         } catch (error) {
             console.log(error);
         }
+
+        this.loading = false;
     }
 }
 </script>
