@@ -6,6 +6,7 @@
                     <a
                         class="category-slider__item d-flex flex-column d-flex flex-column text-black border text-decoration-none fw-bold font-medium rounded w-100 p-2 mb-2"
                         v-for="category in column"
+                        :href="`/categories/${category.slug}`"
                     >
                         <div class="text-end">{{ category.name }}</div>
                         <div class="mh-0 h-100">

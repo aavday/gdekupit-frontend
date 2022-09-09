@@ -1,6 +1,6 @@
 <template>
     <div class="p-3 product-card border rounded shadow mb-4">
-        <div class="product-card__title mb-2 fw-bold font-big">{{ this.product.name }}</div>
+        <a class="product-card__title text-decoration-none mb-2 fw-bold font-big" :href="`/products/${this.product.slug}`">{{ this.product.name }}</a>
         <div class="row d-flex justify-content-between">
             <div class="col-4">
                 <img

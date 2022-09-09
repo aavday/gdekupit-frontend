@@ -1,7 +1,6 @@
 <template>
     <div class="container">
         <Breadcrumbs/>
-        <CategoriesSlider/>
         <div class="row">
             <div class="col-9">
                 <Products :products="products"/>
@@ -14,12 +13,12 @@
 </template>
 
 <script setup>
-import CategoriesSlider from "../components/CategoriesSlider.vue";
 import Products from "../components/Products.vue";
 </script>
 
 <script>
 import axios from "axios";
+import {useRoute} from "vue-router/dist/vue-router";
 
 export default {
     data() {
@@ -29,7 +28,7 @@ export default {
     },
     async mounted() {
         try {
-            this.products = (await axios.get('http://127.0.0.1:8000/api/products')).data.data;
+            this.products = (await axios.get(`http://127.0.0.1:8000/api/product-categories/${useRoute().params.categorySlug}`)).data.data.products;
         } catch (error) {
             console.log(error);
         }
