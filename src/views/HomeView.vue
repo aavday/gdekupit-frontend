@@ -1,10 +1,10 @@
 <template>
     <div class="container">
         <Breadcrumbs/>
-        <CategoriesSlider/>
+        <CategoriesSlider v-if="categories" :categories="categories"/>
         <div class="row">
             <div class="col-9">
-                <Products :products="products"/>
+                <Products v-if="products" :products="products"/>
             </div>
             <div class="col-3">
                 <Aside/>
@@ -25,11 +25,13 @@ export default {
     data() {
         return {
             products: null,
+            categories: null
         }
     },
     async mounted() {
         try {
             this.products = (await axios.get('http://127.0.0.1:8000/api/products')).data.data;
+            this.categories = (await axios.get('http://127.0.0.1:8000/api/product-categories-root')).data.data;
         } catch (error) {
             console.log(error);
         }
