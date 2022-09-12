@@ -3,15 +3,15 @@
         <SplideSlide v-for="categorySlide in categoriesForSlider">
             <div class="row">
                 <div class="col-4 flex-column" v-for="category in categorySlide">
-                    <a
+                    <router-link
                         class="category-slider__item d-flex flex-column d-flex flex-column text-black border text-decoration-none fw-bold font-medium rounded w-100 p-2 mb-2"
-                        :href="`/categories/${category.slug}`"
+                        :to="{ name: 'category-detail', params: { categorySlug: category.slug } }"
                     >
                         <div class="text-end">{{ category.name }}</div>
                         <div class="mh-0 h-100">
                             <img src="/images/product-1.jpg" alt="" class="mh-0 h-100">
                         </div>
-                    </a>
+                    </router-link>
                 </div>
             </div>
         </SplideSlide>
