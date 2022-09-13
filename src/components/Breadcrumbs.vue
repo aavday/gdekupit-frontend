@@ -8,12 +8,11 @@
                 class="breadcrumb-item"
                 aria-current="page"
                 v-if="breadcrumbs"
-                v-for="(item, index) in breadcrumbs"
-                :class="(index + 1 === breadcrumbs.length) ? 'active' : null"
+                v-for="item in breadcrumbs"
             >
-                <router-link :to="{ name: item.routeName, params: item.routeParams }">
+                <RouterLink :to="{ name: item.routeName, params: item.routeParams }">
                     {{ item.name }}
-                </router-link>
+                </RouterLink>
             </li>
         </ol>
     </nav>
@@ -73,7 +72,7 @@ export default {
 </script>
 
 <style scoped>
-.breadcrumb-item.active a {
+.breadcrumb-item a.router-link-active {
     font-weight: bold;
 }
 </style>

@@ -2,9 +2,9 @@
     <header class="header border-bottom navbar-light p-4 shadow">
         <div class="container d-flex align-items-center">
             <div class="d-flex flex-column text-center me-4">
-                <router-link :to="{name: 'home'}">
+                <RouterLink :to="{name: 'home'}">
                     <img src="/images/logo.jpg" alt="" class="header-logo">
-                </router-link>
+                </RouterLink>
                 <div class="fw-bold font-medium">Набережные Челны</div>
             </div>
             <div class="border px-2 me-2 rounded d-flex align-items-center header-catalog__btn cursor-pointer">
@@ -26,7 +26,7 @@
         </div>
     </header>
     <main>
-        <RouterView />
+        <RouterView :key="$route.path"/>
     </main>
 </template>
 
