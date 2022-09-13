@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        <Breadcrumbs/>
         <CategoriesSlider v-if="categories" :categories="categories"/>
         <div class="row">
             <div class="col-9">

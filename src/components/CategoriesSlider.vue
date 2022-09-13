@@ -29,8 +29,6 @@ export default {
     },
     computed: {
         categoriesForSlider() {
-            console.log(this.categories);
-
             let categoriesSlides = [];
 
             for (let i = 0; i < this.categories.length; i += 9) {

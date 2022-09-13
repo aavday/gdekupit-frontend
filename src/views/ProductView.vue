@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    <div class="container" v-if="!loading">
         <Breadcrumbs/>
-        <div class="row" v-if="!loading">
+        <div class="row">
             <div class="col-9">
                 <ul class="nav nav-tabs border-0 mb-4" id="myTab" role="tablist">
                     <li class="nav-item me-3" role="presentation">
