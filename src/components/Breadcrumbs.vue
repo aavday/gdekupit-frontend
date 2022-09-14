@@ -49,7 +49,7 @@ export default {
 
             case 'categories':
                 try {
-                    const category = (await axios.get(`http://127.0.0.1:8000/api/product-categories/${paths[1]}`)).data.data;
+                    const category = (await axios.get(`http://127.0.0.1:8000/api/product-categories-by-slug/${paths[1]}`)).data.data;
 
                     this.addBreadcrumb(category.name, 'category-detail', { categorySlug: category.slug })
                 } catch(error) {

@@ -35,8 +35,6 @@ export default {
                 categoriesSlides.push(this.categories.slice(i, i + 9));
             }
 
-            console.log(categoriesSlides == false);
-
             return categoriesSlides;
         }
     }

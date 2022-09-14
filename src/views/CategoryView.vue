@@ -31,7 +31,7 @@ export default {
     },
     async mounted() {
         try {
-            const category = (await axios.get(`http://127.0.0.1:8000/api/product-categories/${useRoute().params.categorySlug}`)).data.data
+            const category = (await axios.get(`http://127.0.0.1:8000/api/product-categories-by-slug/${useRoute().params.categorySlug}`)).data.data
             this.products = category.products;
             this.childCategories = category.child_categories
         } catch (error) {
