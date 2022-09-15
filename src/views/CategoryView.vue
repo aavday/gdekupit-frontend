@@ -2,7 +2,7 @@
     <div class="container">
         <Breadcrumbs/>
         <CategoriesSlider v-if="childCategories" :categories="childCategories"/>
-        <Brands :brands="brands"></Brands>
+        <Brands v-if="brands" :brands="brands"></Brands>
         <div class="row">
             <div class="col-9">
                 <Products v-if="products" :products="products"/>
