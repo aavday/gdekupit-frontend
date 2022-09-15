@@ -58,7 +58,7 @@ export default {
     },
     async mounted() {
         try {
-            this.product = (await axios.get(`http://127.0.0.1:8000/api/products/${useRoute().params.productSlug}`)).data.data;
+            this.product = (await axios.get(`http://127.0.0.1:8000/api/products-by-slug/${useRoute().params.productSlug}`)).data.data;
         } catch (error) {
             console.log(error);
         }

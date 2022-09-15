@@ -37,10 +37,10 @@ export default {
         switch(paths[0]) {
             case 'products':
                 try {
-                    const product = (await axios.get(`http://127.0.0.1:8000/api/products/${paths[1]}`)).data.data;
+                    const product = (await axios.get(`http://127.0.0.1:8000/api/products-by-slug/${paths[1]}`)).data.data;
 
-                    this.addBreadcrumb(product.category.name, 'category-detail', { categorySlug: product.category.slug })
-                    this.addBreadcrumb(product.name, 'product-detail', { productSlug: product.slug })
+                    this.addBreadcrumb(product.category.name, 'category-page', { categorySlug: product.category.slug })
+                    this.addBreadcrumb(product.name, 'product-page', { productSlug: product.slug })
                 } catch(error) {
                     console.log(error);
                 }
@@ -51,7 +51,7 @@ export default {
                 try {
                     const category = (await axios.get(`http://127.0.0.1:8000/api/product-categories-by-slug/${paths[1]}`)).data.data;
 
-                    this.addBreadcrumb(category.name, 'category-detail', { categorySlug: category.slug })
+                    this.addBreadcrumb(category.name, 'category-page', { categorySlug: category.slug })
                 } catch(error) {
                     console.log(error);
                 }

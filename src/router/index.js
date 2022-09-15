@@ -14,12 +14,12 @@ const router = createRouter({
     },
     {
       path: '/products/:productSlug',
-      name: 'product-detail',
+      name: 'product-page',
       component: ProductView
     },
     {
       path: '/categories/:categorySlug',
-      name: 'category-detail',
+      name: 'category-page',
       component: CategoryView
     },
     {

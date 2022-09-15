@@ -2,7 +2,7 @@
     <div class="p-3 product-card border rounded shadow mb-4">
         <RouterLink
             class="product-card__title text-decoration-none mb-2 fw-bold font-big"
-            :to="{ name: 'product-detail', params: { productSlug: this.product.slug } }"
+            :to="{ name: 'product-page', params: { productSlug: this.product.slug } }"
         >
             {{ this.product.name }}
         </RouterLink>
