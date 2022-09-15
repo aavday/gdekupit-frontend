@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import ProductView from '../views/ProductView.vue';
 import CategoryView from "../views/CategoryView.vue";
+import BrandView from "@/views/BrandView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +21,11 @@ const router = createRouter({
       path: '/categories/:categorySlug',
       name: 'category-detail',
       component: CategoryView
+    },
+    {
+      path: '/brands/:brandSlug',
+      name: 'brand-page',
+      component: BrandView
     }
   ]
 });

@@ -57,6 +57,17 @@ export default {
                 }
 
                 break;
+
+            case 'brands':
+                try {
+                    const brand = (await axios.get(`http://127.0.0.1:8000/api/product-brands-by-slug/${paths[1]}`)).data.data;
+
+                    this.addBreadcrumb(brand.name, 'brand-page', { brandSlug: brand.slug })
+                } catch(error) {
+                    console.log(error);
+                }
+
+                break;
         }
     },
     methods: {
