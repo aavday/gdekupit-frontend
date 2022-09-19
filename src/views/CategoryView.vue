@@ -35,11 +35,32 @@ export default {
     async mounted() {
         try {
             const category = (await axios.get(`http://127.0.0.1:8000/api/product-categories-by-slug/${useRoute().params.categorySlug}`)).data.data
-            this.products = category.products;
             this.childCategories = category.child_categories
             this.brands = category.brands
+            this.products = category.products;
+
+            this.childCategories.forEach(category => {
+                this.pushProductsFromChildCategory(category);
+                this.pushBrandsFromChildCategory(category);
+            });
         } catch (error) {
             console.log(error);
+        }
+    },
+    methods: {
+        pushProductsFromChildCategory(category) {
+            category.products.forEach(product => this.products.push(product))
+
+            category.child_categories.forEach(category => {
+                this.pushProductsFromChildCategory(category);
+            });
+        },
+        pushBrandsFromChildCategory(category) {
+            category.brands.forEach(product => this.brands.push(product))
+
+            category.child_categories.forEach(category => {
+                this.pushBrandsFromChildCategory(category);
+            });
         }
     }
 }
